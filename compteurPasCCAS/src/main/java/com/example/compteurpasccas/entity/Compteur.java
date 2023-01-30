@@ -1,21 +1,21 @@
 package com.example.compteurpasccas.entity;
 
+import io.micrometer.common.lang.NonNull;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Compteur {
     // Paramètres:
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int id;
+
     public int pas;
-
-    // Constructeurs:
-    public Compteur() {
-    }
-
-    // Getters / Setters:
-    public int getPas() {
-        return pas;
-    }
-
-    public void setPas(int pas) {
-        this.pas = pas;
-    }
 
     // Pour ajouter une distance au compteur:
     public void ajouteDistanceKm(int nombreKm){
