@@ -2,13 +2,14 @@ package com.example.compteurpasccas;
 
 import com.example.compteurpasccas.dao.CityRepository;
 import com.example.compteurpasccas.entity.City;
+import com.example.compteurpasccas.entity.Counter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
 public class CompteurPasCcasApplication implements CommandLineRunner {
@@ -26,6 +27,7 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
+
         City paris = new City("Paris", "Informations", true);
         cityRepository.save(paris);
 
