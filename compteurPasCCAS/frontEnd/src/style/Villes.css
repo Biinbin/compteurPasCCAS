@@ -1,0 +1,28 @@
+.lmj-villes {
+	background-color: 'white';
+	padding: 32px;
+    font-family: 'Arial',sans-serif;
+    letter-spacing: normal;
+    color: #555555;
+}
+
+.lmj-villes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lmj-villes ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .lmj-villes ul li::before {
+    content: "";
+    background-image: url(../assets/VerouVilles.png);
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }

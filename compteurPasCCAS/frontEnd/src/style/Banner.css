@@ -1,0 +1,24 @@
+.lmj-banner {
+	color: black;
+	text-align: center;
+	justify-content: flex-end;
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.lmj-bandeau{
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 15px, 0px,10px;
+    font-family: 'Cuprum',sans-serif;
+    font-weight: normal;
+    line-height: 15px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
