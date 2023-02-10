@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("api")
 public class ApiRestController {
-    Counter counter = new Counter(540.0);
+    Counter counter = new Counter((float) 0);
 
     @Autowired
     private CityRepository cityRepository;
@@ -52,20 +52,20 @@ public class ApiRestController {
 
     // Request Mapping pour le compteur
     @GetMapping(path = "/counter")
-    public Double getCounter(){
+    public float getCounter(){
         System.out.println("Obtiens la valeur du compteur");
         return counter.getDistanceKm();
     }
 
     @PutMapping(path = "/counter/steps")
-    public Double updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
-        counter.ajouteDistancePas(counter.getValue() + updatedCounter.getValue());
+    public float updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
+        counter.ajouteDistancePas(updatedCounter.getValue());
         System.out.println("Ajout steps au compteur");
         return getCounter();
     }
     @PutMapping(path = "/counter/km")
-    public Double updateCounterValueInKm(@RequestBody Counter updatedCounter) {
-        counter.ajouteDistanceKm(counter.getValue() + updatedCounter.getValue());
+    public float updateCounterValueInKm(@RequestBody Counter updatedCounter) {
+        counter.ajouteDistanceKm(updatedCounter.getValue());
         System.out.println("Ajout km au compteur");
         return getCounter();
     }
