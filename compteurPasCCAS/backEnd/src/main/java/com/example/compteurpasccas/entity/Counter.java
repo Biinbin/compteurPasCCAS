@@ -9,24 +9,24 @@ import lombok.*;
 @NoArgsConstructor
 public class Counter {
     // Paramètres:
-    public Double value;
+    public float value;
 
-    public Counter(Double value) {
+    public Counter(float value) {
         this.value = value;
     }
 
     // Pour ajouter une distance au compteur:
-    public Double ajouteDistanceKm(Double nombreKm){
-        return value += nombreKm * 1666.7;
+    public float ajouteDistanceKm(float nombreKm){
+        return value += nombreKm;
     }
 
-    public Double ajouteDistancePas(Double nombrePas) {
-        return value += nombrePas;
+    public float ajouteDistancePas(float nombrePas) {
+        return (float) (value += nombrePas * (10.0/16667.0));
     }
 
     // Pour obtenir la distance du compteur:
-    public Double getDistanceKm(){
+    public float getDistanceKm(){
         // Distance d'un pas en kilomètres (pour affichage)
-        return (Double) (value * 0.00059999);
+        return value;
     }
 }
