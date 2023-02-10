@@ -1,13 +1,13 @@
 import '../style/App.css';
 import Banner from './Banner'
-import Compteur from './Compteur';
+import StepCounter from './StepCounter';
 import Villes from './Villes'
 
 function App() {
 	return (
 		<div>
 			<Banner />
-			<Compteur />
+			<StepCounter />
 			<Villes />
 		</div>
 	)
