@@ -2,6 +2,7 @@ package com.example.compteurpasccas.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.json.simple.JSONObject;
 
 @Getter
 @Setter
@@ -25,8 +26,11 @@ public class Counter {
     }
 
     // Pour obtenir la distance du compteur:
-    public float getDistanceKm(){
+    public JSONObject getDistanceKm(){
         // Distance d'un pas en kilomètres (pour affichage)
-        return value;
+        JSONObject json = new JSONObject();
+        json.put("valeur", value);
+
+        return json;
     }
 }
