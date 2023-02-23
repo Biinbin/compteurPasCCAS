@@ -22,6 +22,7 @@ const StepCounter = () => {
         console.log('Valeur ajoutée : ', valueToAdd);
         console.log('Valeur actuelle de stepCount :', stepCount);
         console.log('Unité : ', unit);
+        console.log('url : ', url);
         // Enregistre les modifications apportées au compteur de pas ou de km dans l'API REST
         fetch(url, {
             method: 'PUT',
@@ -29,9 +30,7 @@ const StepCounter = () => {
             body: JSON.stringify({ stepCount: stepCount + valueToAdd})
         })
         .then(response => response.json())
-            .then(data => {
-                setStepCount(data.stepCount);
-            });
+            .then(data => setStepCount(data))
     };
 
   return (
