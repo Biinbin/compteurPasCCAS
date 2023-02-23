@@ -3,9 +3,8 @@ package com.example.compteurpasccas.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.awt.Image;
 
-import java.awt.*;
+import javax.swing.*;
 
 @Entity
 @Getter
@@ -20,8 +19,15 @@ public class City {
     public Integer id;
     public String nom;
     public String informations;
-    //private Image image;
-    boolean estDebloquee;
+    public String urlImg;
+    public boolean estDebloquee;
+
+    public City(String nom, String informations, String urlImg, boolean estDebloquee) {
+        this.nom = nom;
+        this.informations = informations;
+        this.urlImg = urlImg;
+        this.estDebloquee = estDebloquee;
+    }
 
     public City(String nom, String informations, boolean estDebloquee) {
         this.nom = nom;

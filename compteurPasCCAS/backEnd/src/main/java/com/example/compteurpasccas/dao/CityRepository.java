@@ -13,5 +13,4 @@ public interface CityRepository extends JpaRepository<City, Long> {
     default void changeCityState(City city){
         city.setEstDebloquee(true);
     }
-
 }

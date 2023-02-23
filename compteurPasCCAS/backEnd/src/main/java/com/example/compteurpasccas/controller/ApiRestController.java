@@ -6,6 +6,7 @@ import com.example.compteurpasccas.entity.Counter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,23 @@ public class ApiRestController {
         cityRepository.changeCityState(city);
         cityRepository.save(city);
         return city;
+    }
+    @GetMapping(path = "/city/img/{id}")
+    public String findImageById(@PathVariable Integer id){
+        System.out.println("Obtiens l'url de l'image");
+        return cityRepository.findById(id).get().urlImg;
+    }
+
+    @GetMapping(path = "/city/info/{id}")
+    public String findInfoById(@PathVariable Integer id){
+        System.out.println("Obtiens les informations de la ville");
+        return cityRepository.findById(id).get().informations;
+    }
+
+    @GetMapping(path = "/city/nom/{id}")
+    public String findNameById(@PathVariable Integer id){
+        System.out.println("Obtiens les informations de la ville");
+        return cityRepository.findById(id).get().nom;
     }
 
     // Request Mapping pour le compteur

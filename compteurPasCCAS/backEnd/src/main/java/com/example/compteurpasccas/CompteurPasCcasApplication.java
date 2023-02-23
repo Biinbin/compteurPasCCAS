@@ -28,7 +28,10 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
 
-        City paris = new City("Paris", "Informations", true);
+        City paris = new City("Paris",
+                "Paris, ville emblématique de la France, est célèbre pour ses monuments, sa gastronomie, ses musées et sa mode. Capitale de l'amour, elle est un incontournable de l'Europe avec ses rues pittoresques, ses cafés charmants et sa culture riche",
+                "https://t.ly/_2Af",
+                true);
         cityRepository.save(paris);
 
         City barcelone = new City("Barcelone", "Informations", false);
