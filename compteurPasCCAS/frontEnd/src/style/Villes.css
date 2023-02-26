@@ -1,28 +1,69 @@
-.lmj-villes {
-	background-color: 'white';
-	padding: 32px;
-    font-family: 'Arial',sans-serif;
-    letter-spacing: normal;
-    color: #555555;
+/* Mise en forme de la liste de villes */
+.villes-list {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.lmj-villes ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .lmj-villes ul li {
+/* Mise en forme de chaque ville */
+.ville {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .lmj-villes ul li::before {
-    content: "";
-    background-image: url(../assets/VerouVilles.png);
-    background-size: contain;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.ville:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image de la ville */
+.ville img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Titre de la ville */
+.ville h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Bouton d'affichage des informations */
+.ville button {
+    background-color: lightblue;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    white-space: normal;
+}
+
+.ville button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
