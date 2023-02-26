@@ -8,15 +8,8 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("api")
@@ -57,21 +50,35 @@ public class ApiRestController {
         return city;
     }
     @GetMapping(path = "/city/img/{id}")
-    public String findImageById(@PathVariable Integer id){
+    public JSONObject findImageById(@PathVariable Integer id){
         System.out.println("Obtiens l'url de l'image");
-        return cityRepository.findById(id).get().urlImg;
+        JSONObject json = new JSONObject();
+        json.put("url", cityRepository.findById(id).get().urlImg);
+        return json;
     }
 
     @GetMapping(path = "/city/info/{id}")
-    public String findInfoById(@PathVariable Integer id){
+    public JSONObject findInfoById(@PathVariable Integer id){
         System.out.println("Obtiens les informations de la ville");
-        return cityRepository.findById(id).get().informations;
+        JSONObject json = new JSONObject();
+        json.put("informations", cityRepository.findById(id).get().informations);
+        return json;
     }
 
     @GetMapping(path = "/city/nom/{id}")
-    public String findNameById(@PathVariable Integer id){
+    public JSONObject findNameById(@PathVariable Integer id){
         System.out.println("Obtiens les informations de la ville");
-        return cityRepository.findById(id).get().nom;
+        JSONObject json = new JSONObject();
+        json.put("nom", cityRepository.findById(id).get().nom);
+        return json;
+    }
+
+    @GetMapping(path = "/city/distanceFrom0/{id}")
+    public JSONObject findDistanceById(@PathVariable Integer id){
+        System.out.println("Obtiens la distance à partir du début de la ville");
+        JSONObject json = new JSONObject();
+        json.put("distanceFrom0", cityRepository.findById(id).get().distanceFrom0);
+        return json;
     }
 
     // Request Mapping pour le compteur
