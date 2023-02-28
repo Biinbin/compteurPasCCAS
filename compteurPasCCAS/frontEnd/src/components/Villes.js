@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../style/Villes.css'
 
-function Villes({ distance }) {
+function Villes() {
 	const [villes, setVilles] = useState([]);
 
 	useEffect(() => {
@@ -24,33 +24,47 @@ function Villes({ distance }) {
 			.catch(error => console.error(error));
 	}, []);
 
-	const [Distance, setDistance] = useState(0);
+	const [distanceFrom0, setDistance] = useState(0);
 
 	useEffect(() => {
 		// Récupère la distance des villes à partir de l'API REST
-		fetch('http://localhost:8080/api/counter/distance/${id}')
-			.then(response => response.json())
-			.then(data => setDistance(data.valeur))
-			.catch(error => console.error(error));
-	}, []);
 
-	const [infosVille, setInfosVille] = useState('');
+	}, []);
+	const estVerrouillee = (id) => {
+		fetch(`http://localhost:8080/api/city/distanceFrom0/${id}`)
+			.then(response => response.json())
+			.then(data => setDistance(data.distanceFrom0))
+			.catch(error => console.error(error));
+
+		const ville = villes.find(v => v.id === id);
+		return StepCount >= ville.distanceFrom0;
+	};
+
+
+	const [infosVilles, setInfosVilles] = useState(Array(villes.length).fill(''));
 
 	const afficherInfos = (id) => {
 		// Affiche les informations des villes
 		if (estVerrouillee(id)) {
 			//Réécupère les informations des villes
 			fetch(`http://localhost:8080/api/city/info/${id}`)
-				.then((response) => response.text())
-				.then((data) => { setInfosVille(data);
-				});
+				.then((response) => response.json())
+				.then(data => {
+					const index = villes.findIndex(v => v.id === id);
+					const newInfosVilles = [...infosVilles];
+					if (newInfosVilles[index] === data.informations) {
+						// Supprime l'information si elle est déjà affichée
+						newInfosVilles[index] = '';
+					} else {
+						newInfosVilles[index] = data.informations;
+					}
+					setInfosVilles(newInfosVilles);
+				})
+				.catch(error => console.error(error));
 		}
 	};
 
-	const estVerrouillee = (id) => {
-		const ville = villes.find(v => v.id === id);
-		return ville >= ville.distance;
-	};
+
 
 	return (
 		<div className="villes-list">
@@ -58,7 +72,7 @@ function Villes({ distance }) {
 				villes.map((ville) => (
 					<div className="ville" key={ville.id}>
 						{estVerrouillee(ville.id) && (
-							<div className="infos-ville">{infosVille}</div>
+							<div className="infos-ville">{infosVilles[villes.findIndex(v => v.id === ville.id)]}</div>
 						)}
 						<img
 							src={ville.urlImg}
@@ -71,7 +85,8 @@ function Villes({ distance }) {
 						<h2>{ville.nom}</h2>
 						<button onClick={() => afficherInfos(ville.id)}>Informations</button>
 					</div>
-				))}
+				))
+			}
 		</div>
 	);
 }

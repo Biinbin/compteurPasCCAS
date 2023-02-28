@@ -46,7 +46,7 @@ const StepCounter = () => {
             <input type="number" value={valueToAdd} onChange={e => setValueToAdd(e.target.value)} />
             <select value={unit} onChange={e => setUnit(e.target.value)}>
                 <option value="pas">Pas</option>
-                <option value="kilomètre">Kilomètre</option>
+                <option value="kilomètre">Kilomètres</option>
             </select>
             <button onClick={handleSave}>Enregistrer</button>
         </div>
