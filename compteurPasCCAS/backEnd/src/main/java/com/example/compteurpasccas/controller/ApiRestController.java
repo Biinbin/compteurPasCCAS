@@ -39,13 +39,6 @@ public class ApiRestController {
         return cityRepository.findById(id);
     }
 
-    @PutMapping(path = "/city/{id}")
-    public City changeEtatById(@PathVariable Integer id){
-        City city = cityRepository.findById(id).get();
-        cityRepository.changeCityState(city);
-        cityRepository.save(city);
-        return city;
-    }
     @GetMapping(path = "/city/img/{id}")
     public JSONObject findImageById(@PathVariable Integer id){
         JSONObject json = new JSONObject();
