@@ -2,14 +2,10 @@ package com.example.compteurpasccas;
 
 import com.example.compteurpasccas.dao.CityRepository;
 import com.example.compteurpasccas.entity.City;
-import com.example.compteurpasccas.entity.Counter;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @SpringBootApplication
 public class CompteurPasCcasApplication implements CommandLineRunner {
@@ -89,86 +85,86 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
         cityRepository.save(athenes);
 
         City moscou = new City("Moscou",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Moscou est une ville emblématique riche en histoire. Elle abrite la place Rouge, le Kremlin et le musée Pouchkine. Centre économique et politique crucial pour la Russie, Moscou joue un rôle important dans la culture et l'histoire du pays.",
+                "https://t.ly/Mdae",
                 13040);
         cityRepository.save(moscou);
 
         City pekin = new City("Pékin",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Capitale de la Chine, Pékin est riche en histoire et culture, avec des sites célèbres tels que la Cité Interdite et la Grande Muraille. C'est également un centre important pour la technologie et l'innovation.",
+                "https://t.ly/L3Uk",
                 18830);
         cityRepository.save(pekin);
 
         City seoul = new City("Séoul",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La ville la plus peuplée de Corée du Sud, Séoul est un centre culturel avec une cuisine délicieuse, des festivals animés et une vie nocturne vibrante. Elle est également connue pour sa technologie de pointe et son industrie du divertissement florissante.",
+                "https://t.ly/k8IN",
                 19782);
         cityRepository.save(seoul);
 
         City tokyo = new City("Tokyo",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Capitale du Japon, Tokyo est une ville animée avec une culture unique, des sites touristiques emblématiques tels que la tour de Tokyo, ainsi qu'une scène culinaire étonnante.",
+                "https://t.ly/eske4",
                 20941);
         cityRepository.save(tokyo);
 
         City sydney = new City("Sydney",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La plus grande ville d'Australie, Sydney est connue pour ses plages magnifiques, son opéra emblématique et son climat ensoleillé. Elle offre également une riche histoire coloniale et une vie nocturne animée",
+                "https://t.ly/IH-l",
                 28762);
         cityRepository.save(sydney);
 
         City melbourne = new City("Melbourne",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La deuxième plus grande ville d'Australie, Melbourne est un centre culturel avec une scène artistique et musicale florissante, ainsi que des festivals et événements de renommée mondiale.",
+                "https://t.ly/_ZhN",
                 29639);
         cityRepository.save(melbourne);
 
-        City rio = new City("Rio",
-                "Informations",
-                "https://t.ly/r2fc",
+        City rio = new City("Rio de Janeiro",
+                "Située au Brésil, Rio de Janeiro est connue pour ses plages emblématiques, sa samba animée et ses festivités carnavalesques. Elle est également un centre de l'industrie cinématographique et de la mode.",
+                "https://t.ly/VpwH",
                 42841);
         cityRepository.save(rio);
 
         City mexico = new City("Mexico",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Capitale du Mexique, Mexico est une ville historique avec des sites célèbres tels que le Zocalo et la pyramide du Soleil. Elle est également un centre important pour les arts, la culture et la cuisine mexicaine.",
+                "https://t.ly/-X81",
                 51077);
         cityRepository.save(mexico);
 
         City losAngeles = new City("Los Angeles",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La deuxième plus grande ville des États-Unis, Los Angeles est le centre de l'industrie cinématographique et de la télévision, avec des sites célèbres tels que Hollywood et Beverly Hills.",
+                "https://t.ly/Kn8Y",
                 54012);
         cityRepository.save(losAngeles);
 
         City atlanta = new City("Atlanta",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La capitale de l'État de Géorgie, Atlanta est un centre important pour les affaires, les arts et la culture afro-américaines, avec des musées et des monuments emblématiques tels que le Martin Luther King Jr. National Historical Park.",
+                "https://t.ly/0Bhq",
                 57521);
         cityRepository.save(atlanta);
 
         City saintLouis = new City("Saint Louis",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Saint Louis est une ville du Missouri, aux États-Unis, célèbre pour son Gateway Arch et ses musées renommés tels que le Musée d'art de Saint Louis. La ville est un centre culturel important, en particulier pour la musique blues et jazz.",
+                "https://t.ly/8Q_j",
                 58414);
         cityRepository.save(saintLouis);
 
         City montreal = new City("Montreal",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La deuxième plus grande ville du Canada, Montréal est un centre culturel avec une scène artistique et musicale florissante, ainsi qu'une cuisine renommée. Elle est également un centre de l'industrie du jeu vidéo et de la technologie.",
+                "https://t.ly/6_LE",
                 60168);
         cityRepository.save(montreal);
 
         City londres = new City("Londres",
-                "Informations",
-                "https://t.ly/r2fc",
+                "La capitale du Royaume-Uni, Londres est une ville historique avec une riche culture et des sites célèbres tels que le palais de Buckingham et la Tour de Londres. Elle est également un centre important pour les affaires, la finance et les arts.",
+                "https://t.ly/wdow",
                 65385);
         cityRepository.save(londres);
 
         City paris2 = new City("Paris",
-                "Informations",
-                "https://t.ly/r2fc",
+                "Paris, ville emblématique de la France, est célèbre pour ses monuments, sa gastronomie, ses musées et sa mode. Capitale de l'amour, elle est un incontournable de l'Europe avec ses rues pittoresques, ses cafés charmants et sa culture riche",
+                "https://t.ly/ew97",
                 65727);
         cityRepository.save(paris2);
     }
