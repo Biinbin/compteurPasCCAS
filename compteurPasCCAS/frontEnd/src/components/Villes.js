@@ -26,10 +26,6 @@ function Villes() {
 
 	const [distanceFrom0, setDistance] = useState(0);
 
-	useEffect(() => {
-		// Récupère la distance des villes à partir de l'API REST
-
-	}, []);
 	const estVerrouillee = (id) => {
 		fetch(`http://localhost:8080/api/city/distanceFrom0/${id}`)
 			.then(response => response.json())
@@ -77,13 +73,14 @@ function Villes() {
 						<img
 							src={ville.urlImg}
 							alt={ville.nom}
+							className={estVerrouillee(ville.id) ? '' : 'grayscale'}
 							onError={(e) => {
 								e.target.onerror = null;
 								e.target.src = '/default-image.jpg';
 							}}
 						/>
 						<h2>{ville.nom}</h2>
-						<button onClick={() => afficherInfos(ville.id)}>Informations</button>
+						<button className={estVerrouillee(ville.id) ? '' : 'grayscale'} onClick={() => afficherInfos(ville.id)}>Informations</button>
 					</div>
 				))
 			}

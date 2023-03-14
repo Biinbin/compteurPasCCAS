@@ -1,41 +1,111 @@
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  p {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  input[type="number"] {
-    width: 50px;
-    height: 30px;
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    width: 150px;
-    height: 40px;
-    font-size: 18px;
-    background-color: lightblue;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  select {
-    width: 150px;
-    height: 40px;
-    font-size: 18px;
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
+.step-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+span{
+  text-align: center;
+}
+
+input[type="number"] {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 20px;
+}
+
+select {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  background-color: lightblue;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  white-space: normal;
+}
+
+button:hover {
+  background-color: #0060a3;
+}
+
+button:active {
+  box-shadow: none;
+}
+/*
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 20px;
+  height: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  background-color: #007bff;
+  height: 500%;
+  transition: width 0.2s ease-in-out;
+}
+*/
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 20px;
+  height: 15px;
+  margin-top: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  background-color: lightblue;
+  border-radius: 20px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-bar p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
