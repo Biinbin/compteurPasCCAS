@@ -1,13 +1,13 @@
 package com.example.compteurpasccas.controller;
 
 import com.example.compteurpasccas.dao.CityRepository;
-import com.example.compteurpasccas.entity.Cities;
 import com.example.compteurpasccas.entity.City;
 import com.example.compteurpasccas.entity.Counter;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -26,61 +26,58 @@ public class ApiRestController {
     // Request Mapping pour les villes
     @PostMapping(path = "/city", consumes = "application/json")
     public City saveCity(@RequestBody City city){
+        System.out.println("La ville est enregistée");
         return cityRepository.save(city);
     }
 
     @GetMapping(path = "/city")
-    public Cities getAllCities(){
-        return new Cities(cityRepository.findAll());
+    public List<City> getAllCities(){
+        System.out.println("Liste de toutes les villes");
+        return cityRepository.findAll();
     }
 
     @GetMapping(path = "/city/{id}")
     public Optional<City> getCityById(@PathVariable Integer id){
+        System.out.println("Liste de la ville en fonction de l'id");
         return cityRepository.findById(id);
     }
 
     @GetMapping(path = "/city/img/{id}")
-    public JSONObject findImageById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("url", cityRepository.findById(id).get().urlImg);
-        return json;
+    public String findImageById(@PathVariable Integer id){
+        System.out.println("Obtiens l'url de l'image");
+        return cityRepository.findById(id).get().urlImg;
     }
 
     @GetMapping(path = "/city/info/{id}")
-    public JSONObject findInfoById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("informations", cityRepository.findById(id).get().informations);
-        return json;
+    public String findInfoById(@PathVariable Integer id){
+        System.out.println("Obtiens les informations de la ville");
+        return cityRepository.findById(id).get().informations;
     }
 
     @GetMapping(path = "/city/nom/{id}")
-    public JSONObject findNameById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("nom", cityRepository.findById(id).get().nom);
-        return json;
-    }
-
-    @GetMapping(path = "/city/distanceFrom0/{id}")
-    public JSONObject findDistanceById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("distanceFrom0", cityRepository.findById(id).get().distanceFrom0);
-        return json;
+    public String findNameById(@PathVariable Integer id){
+        System.out.println("Obtiens les informations de la ville");
+        return cityRepository.findById(id).get().nom;
     }
 
     // Request Mapping pour le compteur
     @GetMapping(path = "/counter")
     public JSONObject getCounter(){
+        System.out.println("Obtiens la valeur du compteur");
         return counter.getDistanceKm();
     }
 
     @PutMapping(path = "/counter/steps")
-    public JSONObject updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
+    public Counter updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
         counter.ajouteDistancePas(updatedCounter.getValue());
-        return getCounter();
+        System.out.println("Ajout steps au compteur");
+        return updatedCounter;
     }
     @PutMapping(path = "/counter/km")
-    public JSONObject updateCounterValueInKm(@RequestBody Counter updatedCounter) {
+    public Counter updateCounterValueInKm(@RequestBody Counter updatedCounter) {
         counter.ajouteDistanceKm(updatedCounter.getValue());
-        return getCounter();
+        System.out.println("Ajout km au compteur");
+        return updatedCounter;
     }
 }
+
