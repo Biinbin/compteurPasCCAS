@@ -3,6 +3,9 @@ import '../style/Villes.css'
 
 function Villes() {
 	const [villes, setVilles] = useState([]);
+	const [StepCount, setStepCount] = useState(0);
+	const [distanceFrom0, setDistance] = useState(0);
+	const [infosVilles, setInfosVilles] = useState(villes.length ? Array(villes.length).fill('') : []);
 
 	useEffect(() => {
 		// Récupère la liste des villes à partir de l'API REST
@@ -11,12 +14,9 @@ function Villes() {
 			.then((data) => {
 				console.log(data.cities);
 				setVilles(data.cities);
+				setDistance(data.cities.map((ville) => ville.distanceFrom0)); // Stocke la distanceFrom0 dans un tableau séparé
+				setInfosVilles(Array(data.cities.length).fill(''));
 			});
-	}, []);
-
-	const [StepCount, setStepCount] = useState(0);
-
-	useEffect(() => {
 		// Récupère la valeur actuelle du compteur de pas à partir de l'API REST
 		fetch('http://localhost:8080/api/counter')
 			.then(response => response.json())
@@ -24,20 +24,10 @@ function Villes() {
 			.catch(error => console.error(error));
 	}, []);
 
-	const [distanceFrom0, setDistance] = useState(0);
-
 	const estVerrouillee = (id) => {
-		fetch(`http://localhost:8080/api/city/distanceFrom0/${id}`)
-			.then(response => response.json())
-			.then(data => setDistance(data.distanceFrom0))
-			.catch(error => console.error(error));
-
 		const ville = villes.find(v => v.id === id);
 		return StepCount >= ville.distanceFrom0;
 	};
-
-
-	const [infosVilles, setInfosVilles] = useState(Array(villes.length).fill(''));
 
 	const afficherInfos = (id) => {
 		// Affiche les informations des villes
@@ -61,7 +51,6 @@ function Villes() {
 	};
 
 
-
 	return (
 		<div className="villes-list">
 			{villes &&
@@ -74,10 +63,6 @@ function Villes() {
 							src={ville.urlImg}
 							alt={ville.nom}
 							className={estVerrouillee(ville.id) ? '' : 'grayscale'}
-							onError={(e) => {
-								e.target.onerror = null;
-								e.target.src = '/default-image.jpg';
-							}}
 						/>
 						<h2>{ville.nom}</h2>
 						<button className={estVerrouillee(ville.id) ? '' : 'grayscale'} onClick={() => afficherInfos(ville.id)}>Informations</button>
