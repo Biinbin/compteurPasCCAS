@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    margin-left: 150px;
 }
 
 /* Mise en forme de chaque ville */
@@ -63,7 +64,10 @@
 }
 
 .ville button:hover {
-    background-color: #fff;
+    background-color: #0060a3;
     color: #000;
 }
 
+.grayscale {
+    filter: grayscale(100%);
+}
