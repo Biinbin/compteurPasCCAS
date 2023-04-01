@@ -94,7 +94,7 @@ button:active {
 }
 
 .progress-bar-fill {
-  background-color: lightblue;
+  background-color: #45646e;
   border-radius: 20px;
   height: 100%;
   left: 0;
