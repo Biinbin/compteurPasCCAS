@@ -74,6 +74,7 @@ public class ApiRestController {
         counter.ajouteDistancePas(updatedCounter.getValue());
         return updatedCounter;
     }
+
     @PutMapping(path = "/counter/km")
     public Counter updateCounterValueInKm(@RequestBody Counter updatedCounter) {
         counter.ajouteDistanceKm(updatedCounter.getValue());

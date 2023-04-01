@@ -11,7 +11,6 @@ import org.json.simple.JSONObject;
 public class Counter {
     // Paramètres:
     public float value;
-
     public Counter(float value) {
         this.value = value;
     }
