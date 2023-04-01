@@ -19,10 +19,6 @@ public class ApiRestController {
     @Autowired
     private CityRepository cityRepository;
 
-    public void RestController(CityRepository cityRepository){
-        this.cityRepository = cityRepository;
-    }
-
     // Request Mapping pour les villes
     @PostMapping(path = "/city", consumes = "application/json")
     public City saveCity(@RequestBody City city){
@@ -74,13 +70,13 @@ public class ApiRestController {
     }
 
     @PutMapping(path = "/counter/steps")
-    public JSONObject updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
+    public Counter updateCounterValueInSteps(@RequestBody Counter updatedCounter) {
         counter.ajouteDistancePas(updatedCounter.getValue());
-        return getCounter();
+        return updatedCounter;
     }
     @PutMapping(path = "/counter/km")
-    public JSONObject updateCounterValueInKm(@RequestBody Counter updatedCounter) {
+    public Counter updateCounterValueInKm(@RequestBody Counter updatedCounter) {
         counter.ajouteDistanceKm(updatedCounter.getValue());
-        return getCounter();
+        return updatedCounter;
     }
 }

@@ -28,11 +28,4 @@ public class City {
         this.urlImg = urlImg;
         this.distanceFrom0 = distanceFrom0;
     }
-
-
-
-    public City(String nom, String informations, boolean estDebloquee) {
-        this.nom = nom;
-        this.informations = informations;
-    }
 }
