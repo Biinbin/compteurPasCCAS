@@ -22,7 +22,7 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
 
     @Override
     @Transactional
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         City paris = new City("Paris",
                 "Paris, ville emblématique de la France, est célèbre pour ses monuments, sa gastronomie, ses musées et sa mode. Capitale de l'amour, elle est un incontournable de l'Europe avec ses rues pittoresques, ses cafés charmants et sa culture riche",
@@ -122,49 +122,49 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
 
         City rio = new City("Rio de Janeiro",
                 "Située au Brésil, Rio de Janeiro est connue pour ses plages emblématiques, sa samba animée et ses festivités carnavalesques. Elle est également un centre de l'industrie cinématographique et de la mode.",
-                "https://t.ly/VpwH",
+                "https://www.costacroisieres.fr/content/dam/costa/costa-magazine/article-images/what-to-see-in-rio-de-janeiro/rio-de-janeiro-panorama_YuJas-Shutterstock_2.jpg.image.694.390.low.jpg",
                 42841);
         cityRepository.save(rio);
 
         City mexico = new City("Mexico",
                 "Capitale du Mexique, Mexico est une ville historique avec des sites célèbres tels que le Zocalo et la pyramide du Soleil. Elle est également un centre important pour les arts, la culture et la cuisine mexicaine.",
-                "https://t.ly/-X81",
+                "https://www.francaisaletranger.fr/wp-content/uploads/2022/08/Mexique.jpg",
                 51077);
         cityRepository.save(mexico);
 
         City losAngeles = new City("Los Angeles",
                 "La deuxième plus grande ville des États-Unis, Los Angeles est le centre de l'industrie cinématographique et de la télévision, avec des sites célèbres tels que Hollywood et Beverly Hills.",
-                "https://t.ly/Kn8Y",
+                "https://www.jeparsauxusa.com/wp-content/uploads/2018/09/los-angeles-1.jpg",
                 54012);
         cityRepository.save(losAngeles);
 
         City atlanta = new City("Atlanta",
                 "La capitale de l'État de Géorgie, Atlanta est un centre important pour les affaires, les arts et la culture afro-américaines, avec des musées et des monuments emblématiques tels que le Martin Luther King Jr. National Historical Park.",
-                "https://t.ly/0Bhq",
+                "https://media.istockphoto.com/id/1165409774/photo/atlanta-georgia-ga-downtown-skyline-aerial-panorama.jpg?s=612x612&w=0&k=20&c=SQYIggOdHb29g1O34Kjxco7-5IGu0VNUmaVUDJRLzbs=",
                 57521);
         cityRepository.save(atlanta);
 
         City saintLouis = new City("Saint Louis",
                 "Saint Louis est une ville du Missouri, aux États-Unis, célèbre pour son Gateway Arch et ses musées renommés tels que le Musée d'art de Saint Louis. La ville est un centre culturel important, en particulier pour la musique blues et jazz.",
-                "https://t.ly/8Q_j",
+                "https://www.visittheusa.fr/sites/default/files/styles/hero_l/public/images/hero_media_image/2017-02/0%20HERO_StLouis%20-%20shutterstock_166920155_Web72DPI_crop.jpg?h=58765dd8&itok=OgvAlZjy",
                 58414);
         cityRepository.save(saintLouis);
 
         City montreal = new City("Montreal",
                 "La deuxième plus grande ville du Canada, Montréal est un centre culturel avec une scène artistique et musicale florissante, ainsi qu'une cuisine renommée. Elle est également un centre de l'industrie du jeu vidéo et de la technologie.",
-                "https://t.ly/6_LE",
+                "https://media.istockphoto.com/id/515441828/photo/autumn-colors-in-montreal-city.jpg?s=612x612&w=0&k=20&c=tMBKvoalmk_a1dD8JPLhkP2hM61psLF-k3WNPctS6Jo=",
                 60168);
         cityRepository.save(montreal);
 
         City londres = new City("Londres",
                 "La capitale du Royaume-Uni, Londres est une ville historique avec une riche culture et des sites célèbres tels que le palais de Buckingham et la Tour de Londres. Elle est également un centre important pour les affaires, la finance et les arts.",
-                "https://t.ly/wdow",
+                "https://img.freepik.com/photos-gratuite/big-ben-westminster-bridge-au-coucher-du-soleil-londres-royaume-uni_268835-1395.jpg",
                 65385);
         cityRepository.save(londres);
 
         City paris2 = new City("Paris",
                 "Paris, ville emblématique de la France, est célèbre pour ses monuments, sa gastronomie, ses musées et sa mode. Capitale de l'amour, elle est un incontournable de l'Europe avec ses rues pittoresques, ses cafés charmants et sa culture riche",
-                "https://t.ly/ew97",
+                "https://thumbs.dreamstime.com/b/tour-eiffel-de-paris-et-rivi%C3%A8re-la-seine-au-coucher-du-soleil-%C3%A0-france-107376702.jpg",
                 65727);
         cityRepository.save(paris2);
     }
