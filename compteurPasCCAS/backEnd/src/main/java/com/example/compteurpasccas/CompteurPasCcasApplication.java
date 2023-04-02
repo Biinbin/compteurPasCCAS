@@ -32,7 +32,7 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
 
         City barcelone = new City("Barcelone",
                 "Barcelone, ville espagnole dynamique située sur la côte nord-est de l'Espagne. Attractions culturelles telles que la Sagrada Familia, plages, bars à tapas, marchés animés et vie nocturne vibrante. Ville incontournable pour les touristes du monde entier.",
-                 "https://swello.com/fr/blog/wp-content/uploads/2019/11/barcelone-swello.jpg",
+                 "https://thumbs.dreamstime.com/b/stationnement-guell-%C3%A0-barcelone-espagne-23606224.jpg",
                 1038);
         cityRepository.save(barcelone);
 
@@ -80,43 +80,43 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
 
         City athenes = new City("Athènes",
                 "Athènes, capitale de la Grèce, est célèbre pour son histoire et ses sites archéologiques tels que le Parthénon. La ville propose une cuisine savoureuse, des marchés colorés et des musées fascinants, en faisant d'elle une destination incontournable.",
-                "https://t.ly/r2fc",
+                "https://resize.elle.fr/article/var/plain_site/storage/images/loisirs/evasion/athenes-arty-visite-guidee-3940006/95123733-2-fre-FR/Athenes-arty-visite-guidee.jpg",
                 10088);
         cityRepository.save(athenes);
 
         City moscou = new City("Moscou",
                 "Moscou est une ville emblématique riche en histoire. Elle abrite la place Rouge, le Kremlin et le musée Pouchkine. Centre économique et politique crucial pour la Russie, Moscou joue un rôle important dans la culture et l'histoire du pays.",
-                "https://t.ly/Mdae",
+                "https://upload.wikimedia.org/wikipedia/commons/1/18/Kremlin_Moscow.jpg",
                 13040);
         cityRepository.save(moscou);
 
         City pekin = new City("Pékin",
                 "Capitale de la Chine, Pékin est riche en histoire et culture, avec des sites célèbres tels que la Cité Interdite et la Grande Muraille. C'est également un centre important pour la technologie et l'innovation.",
-                "https://t.ly/L3Uk",
+                "https://media.istockphoto.com/id/535914395/fr/photo/quartier-financier-de-p%C3%A9kin-en-chine.jpg?s=612x612&w=0&k=20&c=2woSngiUXM9VDRei5-nW-eO6_2fQvalMgDEHvaCZOfI=",
                 18830);
         cityRepository.save(pekin);
 
         City seoul = new City("Séoul",
                 "La ville la plus peuplée de Corée du Sud, Séoul est un centre culturel avec une cuisine délicieuse, des festivals animés et une vie nocturne vibrante. Elle est également connue pour sa technologie de pointe et son industrie du divertissement florissante.",
-                "https://t.ly/k8IN",
+                "https://media.istockphoto.com/id/1257892405/photo/seoul-city-skyline-and-downtown-and-skyscraper-at-night-is-the-best-view-and-beautiful-of.jpg?b=1&s=170667a&w=0&k=20&c=CB0z8DNyYeEl2N7o7eoUTQ4_l9ccnJlWxxxu9jY8884=",
                 19782);
         cityRepository.save(seoul);
 
         City tokyo = new City("Tokyo",
                 "Capitale du Japon, Tokyo est une ville animée avec une culture unique, des sites touristiques emblématiques tels que la tour de Tokyo, ainsi qu'une scène culinaire étonnante.",
-                "https://t.ly/eske4",
+                "https://media.routard.com/image/89/5/fb-tokyo.1538895.jpg",
                 20941);
         cityRepository.save(tokyo);
 
         City sydney = new City("Sydney",
                 "La plus grande ville d'Australie, Sydney est connue pour ses plages magnifiques, son opéra emblématique et son climat ensoleillé. Elle offre également une riche histoire coloniale et une vie nocturne animée",
-                "https://t.ly/IH-l",
+                "https://media.routard.com/image/72/5/sydney.1559725.jpg",
                 28762);
         cityRepository.save(sydney);
 
         City melbourne = new City("Melbourne",
                 "La deuxième plus grande ville d'Australie, Melbourne est un centre culturel avec une scène artistique et musicale florissante, ainsi que des festivals et événements de renommée mondiale.",
-                "https://t.ly/_ZhN",
+                "https://thumbs.dreamstime.com/b/ville-de-melbourne-87049773.jpg",
                 29639);
         cityRepository.save(melbourne);
 

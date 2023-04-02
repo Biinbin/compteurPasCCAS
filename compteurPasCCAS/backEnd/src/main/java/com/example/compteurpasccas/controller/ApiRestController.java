@@ -20,11 +20,6 @@ public class ApiRestController {
     private CityRepository cityRepository;
 
     // Request Mapping pour les villes
-    @PostMapping(path = "/city", consumes = "application/json")
-    public City saveCity(@RequestBody City city){
-        return cityRepository.save(city);
-    }
-
     @GetMapping(path = "/city")
     public Cities getAllCities(){
         return new Cities(cityRepository.findAll());
@@ -35,31 +30,10 @@ public class ApiRestController {
         return cityRepository.findById(id);
     }
 
-    @GetMapping(path = "/city/img/{id}")
-    public JSONObject findImageById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("url", cityRepository.findById(id).get().urlImg);
-        return json;
-    }
-
     @GetMapping(path = "/city/info/{id}")
     public JSONObject findInfoById(@PathVariable Integer id){
         JSONObject json = new JSONObject();
         json.put("informations", cityRepository.findById(id).get().informations);
-        return json;
-    }
-
-    @GetMapping(path = "/city/nom/{id}")
-    public JSONObject findNameById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("nom", cityRepository.findById(id).get().nom);
-        return json;
-    }
-
-    @GetMapping(path = "/city/distanceFrom0/{id}")
-    public JSONObject findDistanceById(@PathVariable Integer id){
-        JSONObject json = new JSONObject();
-        json.put("distanceFrom0", cityRepository.findById(id).get().distanceFrom0);
         return json;
     }
 
