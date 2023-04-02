@@ -50,7 +50,7 @@ public class CompteurPasCcasApplication implements CommandLineRunner {
 
         City berlin = new City("Berlin",
                 "Berlin, capitale de l'Allemagne, mêle histoire mouvementée, culture alternative, vie nocturne animée et riche scène artistique. Monuments historiques, musées, galeries et bars branchés font de Berlin une ville diversifiée et unique.",
-                "https://www.okvoyage.com/wp-content/uploads/2015/06/berlin.jpg",
+                "https://www.en-vols.com/wp-content/uploads/afmm/2022/09/GettyImages-840813592_Berlin_belles_vues_Michelin.jpg",
                 3903);
         cityRepository.save(berlin);
 
